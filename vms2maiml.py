@@ -54,10 +54,10 @@ def writeValue(generallist1, vmsdict):
     for glindex, generaldict in enumerate(generallist1):
         ## propertyListTypeを処理
         new_generaldict = generaldict
-        print(new_generaldict[maimlelement.typed])
+        #print(new_generaldict[maimlelement.typed])
         if new_generaldict[maimlelement.typed] == 'propertyListType':
             if new_generaldict[maimlelement.keyd] == 'corresponding_variables':
-                print('corresponding_variables')
+                #print('corresponding_variables')
                 cv_num = blockdata.num_corresponding_variables  ## corresponding_variableのlistの数
                 if cv_num > 0:
                     vmscvlist = blockdata.corresponding_variables
@@ -91,7 +91,7 @@ def writeValue(generallist1, vmsdict):
                         child_generallist.append(child_generaldict)
                     new_generaldict[maimlelement.property] = child_generallist
             elif generaldict[maimlelement.keyd] == 'additional_numerical_params':
-                print('additional_numerical_params')
+                #print('additional_numerical_params')
                 anp_num = blockdata.num_additional_numerical_params  ## additional_numerical_paramsのlistの数
                 if anp_num > 0:
                     vmsanplist = blockdata.additional_numerical_params
@@ -106,7 +106,7 @@ def writeValue(generallist1, vmsdict):
                         child_generallist.append(child_generaldict)
                     new_generaldict[maimlelement.property] = child_generallist
             elif generaldict[maimlelement.keyd] == 'sputtering_source':
-                print('sputtering_source')
+                #print('sputtering_source')
                 vmsssdata = blockdata.sputtering_source.SputteringSource  # SputteringSource
                 child_generallist= [{ maimlelement.keyd   : 'energy',
                                         maimlelement.typed  : 'floatType',
@@ -139,7 +139,7 @@ def writeValue(generallist1, vmsdict):
                                     ]
                 new_generaldict[maimlelement.property] = child_generallist
             elif generaldict[maimlelement.keyd] == 'linescan_coordinates':
-                print('linescan_coordinates')
+                #print('linescan_coordinates')
                 vmslcdata = blockdata.linescan_coordinates.LinescanCoordinates  # LinescanCoordinates
                 child_generallist= [{ maimlelement.keyd   : 'first_linescan_start_x',
                                         maimlelement.typed  : 'intType',
